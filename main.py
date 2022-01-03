@@ -1,5 +1,5 @@
 import requests
-from qrcodegen import *
+from qrcodegen import generateDownloadQRCode
 from tqdm import tqdm
 def download(id, path):
     ''' Downloads content from ID (obtained in the details url of content)'''
