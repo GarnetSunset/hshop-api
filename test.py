@@ -1,2 +1,2 @@
-import __main__ as hs
-hs.generateDownloadQRCode(20046)
+import main as hs
+hs.generateDownloadQRCode(19050, r"C:\Users\Alexander\Desktop\CIAs\\")
