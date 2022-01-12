@@ -6,7 +6,7 @@ This project still has a long way to go, but here's what you can do right now an
 ### Download content
 ```py
 import hshop-api as hs
-hs.download(478, r"C:\Users\Alexander\Desktop\CIAs\\") # Download Mario Kart 7 (Legit CIA), and send the path where it's going to be located to the API. NB: you might have to put in 2 backslashes to escape the blackslash and maybe throw in an r at the beginning of the path string. It is how it is.
+hs.download(478, r"C:\\Users\\Alexander\\Desktop\\CIAs\\") # Download Mario Kart 7 (Legit CIA), and send the path where it's going to be located to the API. NB: you might have to put in 2 backslashes to escape the blackslash and maybe throw in an r at the beginning of the path string. It is how it is. This doesn't affect linux users (just put the r to make the path raw, fuck you windows :) )
 ```
 
 # Donate
