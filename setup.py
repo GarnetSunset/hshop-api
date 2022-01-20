@@ -1,13 +1,18 @@
 from distutils.core import setup
+from pathlib import Path
+this_directory = Path(__file__).parent
+readme = (this_directory / "README.md").read_text()
 setup(
     name = 'hshop-api',
     packages = ['hshop-api'],
-    version = '0.1',
+    version = '0.2',
     license = 'GPL3',
     description = 'A Python API for interacting with the hShop.',
     author = 'Odyssey346',
     author_email = 'odyssey346@disroot.org',
     url = 'https://github.com/Odyssey346/hshop-api',
+    long_description=readme,
+    long_description_content_type='text/markdown',
     install_requires=[
         'qrcode',
         'requests',
