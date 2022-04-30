@@ -1,24 +1,27 @@
-import requests
-from generateqrcode import *
-from tqdm import tqdm
-def download(id, path):
-    '''Downloads content from ID (obtained in the details url of content)'''
-    dID = str(id)
-    downloadpath = str(path)
-    downloadurl = "https://download4.erista.me/content/"
-    req = requests.get(downloadurl + "request?id=" + dID)
-    data = req.json()
-    token = data["token"]
-    completedownloadurl = downloadurl + dID + "?token=" + token
-    print("URL: " + completedownloadurl)
-    print ("Downloading content with ID " + dID + ", please wait...")
+from tkinter import *
+from tkinter import filedialog
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
-    }
 
-    response = requests.get(completedownloadurl, stream=False, headers=headers)
+def browse_button():
+    # Allow user to select a directory and store it in global var
+    # called folder_path
+    global folder_path
+    filename = filedialog.askdirectory()
+    folder_path.set(filename)
+    print(filename)
 
-    with open(downloadpath + dID + ".cia", "wb") as handle:
-            for data in tqdm(response.iter_content(),  unit='B', unit_scale=True, unit_divisor=1024):
-                handle.write(data)
+
+def main():
+    root = Tk()
+
+    folder_path = ""
+    lbl1 = Label(root, folder_path)
+    lbl1.grid(row=0, column=1)
+    button2 = Button(text="Browse", command=browse_button)
+    button2.grid(row=0, column=3)
+
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
