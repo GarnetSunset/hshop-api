@@ -2,7 +2,7 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dw/hshop-api)
 Python API for interacting with the [hShop](https://hshop.erista.me).
 # Install
-The project exists on PyPI, so just run:
+~~The project exists on PyPI, so just run:~~
 ```
 pip install hshop-api
 ```
