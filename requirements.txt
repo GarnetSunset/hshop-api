@@ -1,5 +1,4 @@
 requests>=2.27.1
 qrcode>=7.3.1
 tqdm>=4.64.0
-PySimpleGUIQt>=0.35.0
-Pillow
+PySimpleGUI>=4.59.0

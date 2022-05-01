@@ -18,7 +18,7 @@ def gen_qr_code(id):
     token_url = download_url + game_id + "?token=" + token
     img = qrcode.make(token_url)
     buf = BytesIO()
-    img = img.resize((300, 300))
+    img = img.resize((200, 200))
     img.save(buf, format="PNG")
     return buf.getvalue()
 
@@ -34,11 +34,12 @@ def download(id, download_path):
     print("Downloading content with ID " + game_id + ", please wait...")
     response = requests.get(token_url, stream=False)
 
-    with open(download_path + game_id + ".cia", "wb") as handle:
+    with open(f"{download_path}/{game_id}.cia", "wb") as handle:
         for data in tqdm(
             response.iter_content(), unit="B", unit_scale=True, unit_divisor=1024
         ):
             handle.write(data)
+    print(f"Done with {game_id}!")
 
 
 def search(query, **kwargs):
